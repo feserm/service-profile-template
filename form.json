@@ -1,0 +1,64 @@
+[
+    {
+        "title": "General Information",
+        "questions": [
+            {
+                "label": "Service Name",
+                "type": "string",
+                "placeholder": "Enter the name of the service"
+            },
+            {
+                "label": "Service Provider",
+                "type": "string",
+                "placeholder": "Enter the name of the organization providing this service"
+            },
+            {
+                "label": "Area of Application",
+                "type": "select",
+                "options": [
+                    "Planning",
+                    "Harmonization (e.g. Curation, Terminology)",
+                    "Access/Archival",
+                    "Discover/Exploration",
+                    "Processing/Visualization",
+                    "Support/Training",
+                    "Other"
+                ]
+            },
+            {
+                "label": "Short Description",
+                "type": "textarea",
+                "placeholder": "Short description of what this service is about"
+            },
+            {
+                "label": "Stage of Development",
+                "type": "select",
+                "options": [
+                    "Development",
+                    "Demonstrator",
+                    "Productive"
+                ]
+            },
+            {
+                "label": "Version",
+                "type": "string",
+                "placeholder": "Current version of the service"
+            },
+            {
+                "label": "Documentation",
+                "type": "string",
+                "placeholder": "Link to Documentation"
+            },
+            {
+                "label": "Terms of Use",
+                "type": "string",
+                "placeholder": "Link to Terms of Use"
+            },
+            {
+                "label": "License",
+                "type": "select",
+                "optionsUrl": "https://raw.githubusercontent.com/spdx/license-list-data/main/json/licenses.json"
+            }
+        ]
+    }
+]
