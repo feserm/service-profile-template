@@ -1,0 +1,1044 @@
+{
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "default": {},
+    "title": "Root Schema",
+    "required": [
+        "serviceName",
+        "contentResponsible",
+        "detailedDescription",
+        "generalInformation",
+        "organizationalInformation",
+        "support",
+        "technicalInfrastructure",
+        "documentation",
+        "reporting"
+    ],
+    "properties": {
+        "serviceName": {
+            "type": "string",
+            "default": "",
+            "title": "The serviceName Schema",
+            "examples": [
+                "Example Service"
+            ]
+        },
+        "contentResponsible": {
+            "type": "string",
+            "default": "",
+            "title": "The contentResponsible Schema",
+            "examples": [
+                "demo@example.com"
+            ]
+        },
+        "detailedDescription": {
+            "type": "string",
+            "default": "",
+            "title": "The detailedDescription Schema",
+            "examples": [
+                "This is a detailed description. Lorem ipsum..."
+            ]
+        },
+        "generalInformation": {
+            "type": "object",
+            "default": {},
+            "title": "The generalInformation Schema",
+            "required": [
+                "serviceProvider",
+                "areaOfApplication",
+                "shortDescription",
+                "stageOfDevelopment",
+                "version",
+                "documentationUrl",
+                "licenseUrl",
+                "serviceUrl"
+            ],
+            "properties": {
+                "serviceProvider": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The serviceProvider Schema",
+                    "examples": [
+                        "The Organization"
+                    ]
+                },
+                "areaOfApplication": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The areaOfApplication Schema",
+                    "items": {
+                        "type": "object",
+                        "title": "A Schema",
+                        "required": [
+                            "name",
+                            "value",
+                            "description"
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "title": "The name Schema",
+                                "examples": [
+                                    "Planning",
+                                    "Harmonization (e.g. Curation, Terminology)",
+                                    "Access/Archival",
+                                    "Discover/Exploration",
+                                    "Processing/Visualization",
+                                    "Support/Training",
+                                    "Other"
+                                ]
+                            },
+                            "value": {
+                                "type": "boolean",
+                                "title": "The value Schema",
+                                "examples": [
+                                    false,
+                                    true
+                                ]
+                            },
+                            "description": {
+                                "type": "string",
+                                "default": "",
+                                "title": "The description Schema",
+                                "examples": [
+                                    "please specify"
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "name": "Planning",
+                            "value": false
+                        },
+                        {
+                            "name": "Harmonization (e.g. Curation, Terminology)",
+                            "value": false
+                        },
+                        {
+                            "name": "Access/Archival",
+                            "value": false
+                        },
+                        {
+                            "name": "Discover/Exploration",
+                            "value": false
+                        },
+                        {
+                            "name": "Processing/Visualization",
+                            "value": false
+                        },
+                        {
+                            "name": "Support/Training",
+                            "value": true
+                        },
+                        {
+                            "name": "Other",
+                            "description": "please specify",
+                            "value": false
+                        }]
+                    },
+                    "examples": [
+                        [{
+                            "name": "Planning",
+                            "value": false
+                        },
+                        {
+                            "name": "Harmonization (e.g. Curation, Terminology)",
+                            "value": false
+                        },
+                        {
+                            "name": "Access/Archival",
+                            "value": false
+                        },
+                        {
+                            "name": "Discover/Exploration",
+                            "value": false
+                        },
+                        {
+                            "name": "Processing/Visualization",
+                            "value": false
+                        },
+                        {
+                            "name": "Support/Training",
+                            "value": true
+                        },
+                        {
+                            "name": "Other",
+                            "description": "please specify",
+                            "value": false
+                        }]
+                    ]
+                },
+                "shortDescription": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The shortDescription Schema",
+                    "examples": [
+                        "This is a short description. Maximum 250 words."
+                    ]
+                },
+                "stageOfDevelopment": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The stageOfDevelopment Schema",
+                    "items": {
+                        "type": "object",
+                        "title": "A Schema",
+                        "required": [
+                            "name",
+                            "value",
+                            "substages"
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "title": "The name Schema",
+                                "examples": [
+                                    "Development",
+                                    "Demonstrator",
+                                    "Productive"
+                                ]
+                            },
+                            "value": {
+                                "type": "boolean",
+                                "title": "The value Schema",
+                                "examples": [
+                                    false,
+                                    true
+                                ]
+                            },
+                            "substages": {
+                                "type": "array",
+                                "title": "The substages Schema",
+                                "items": {
+                                    "type": "object",
+                                    "title": "A Schema",
+                                    "required": [
+                                        "name",
+                                        "value"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "type": "string",
+                                            "title": "The name Schema",
+                                            "examples": [
+                                                "Pre-alpha",
+                                                "Alpha",
+                                                "Beta",
+                                                "Release Candidate",
+                                                "Release"
+                                            ]
+                                        },
+                                        "value": {
+                                            "type": "boolean",
+                                            "title": "The value Schema",
+                                            "examples": [
+                                                false,
+                                                true
+                                            ]
+                                        }
+                                    },
+                                    "examples": [{
+                                        "name": "Pre-alpha",
+                                        "value": false
+                                    },
+                                    {
+                                        "name": "Alpha",
+                                        "value": false
+                                    },
+                                    {
+                                        "name": "Beta",
+                                        "value": false
+                                    },
+                                    {
+                                        "name": "Release Candidate",
+                                        "value": false
+                                    },
+                                    {
+                                        "name": "Release",
+                                        "value": true
+                                    }]
+                                },
+                                "examples": [
+                                    [{
+                                        "name": "Pre-alpha",
+                                        "value": false
+                                    },
+                                    {
+                                        "name": "Alpha",
+                                        "value": false
+                                    }],
+                                    [{
+                                        "name": "Beta",
+                                        "value": false
+                                    },
+                                    {
+                                        "name": "Release Candidate",
+                                        "value": false
+                                    }],
+                                    [{
+                                        "name": "Release",
+                                        "value": true
+                                    }]
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "name": "Development",
+                            "value": false,
+                            "substages": [{
+                                "name": "Pre-alpha",
+                                "value": false
+                            },
+                            {
+                                "name": "Alpha",
+                                "value": false
+                            }]
+                        },
+                        {
+                            "name": "Demonstrator",
+                            "value": false,
+                            "substages": [{
+                                "name": "Beta",
+                                "value": false
+                            },
+                            {
+                                "name": "Release Candidate",
+                                "value": false
+                            }]
+                        },
+                        {
+                            "name": "Productive",
+                            "value": true,
+                            "substages": [{
+                                "name": "Release",
+                                "value": true
+                            }]
+                        }]
+                    },
+                    "examples": [
+                        [{
+                            "name": "Development",
+                            "value": false,
+                            "substages": [{
+                                "name": "Pre-alpha",
+                                "value": false
+                            },
+                            {
+                                "name": "Alpha",
+                                "value": false
+                            }]
+                        },
+                        {
+                            "name": "Demonstrator",
+                            "value": false,
+                            "substages": [{
+                                "name": "Beta",
+                                "value": false
+                            },
+                            {
+                                "name": "Release Candidate",
+                                "value": false
+                            }]
+                        },
+                        {
+                            "name": "Productive",
+                            "value": true,
+                            "substages": [{
+                                "name": "Release",
+                                "value": true
+                            }]
+                        }]
+                    ]
+                },
+                "version": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The version Schema",
+                    "examples": [
+                        "2.0"
+                    ]
+                },
+                "documentationUrl": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The documentationUrl Schema",
+                    "examples": [
+                        "https://example.com"
+                    ]
+                },
+                "licenseUrl": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The licenseUrl Schema",
+                    "examples": [
+                        "https://example.com"
+                    ]
+                },
+                "serviceUrl": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The serviceUrl Schema",
+                    "examples": [
+                        "https://example.com"
+                    ]
+                }
+            },
+            "examples": [{
+                "serviceProvider": "The Organization",
+                "areaOfApplication": [{
+                    "name": "Planning",
+                    "value": false
+                },
+                {
+                    "name": "Harmonization (e.g. Curation, Terminology)",
+                    "value": false
+                },
+                {
+                    "name": "Access/Archival",
+                    "value": false
+                },
+                {
+                    "name": "Discover/Exploration",
+                    "value": false
+                },
+                {
+                    "name": "Processing/Visualization",
+                    "value": false
+                },
+                {
+                    "name": "Support/Training",
+                    "value": true
+                },
+                {
+                    "name": "Other",
+                    "description": "please specify",
+                    "value": false
+                }],
+                "shortDescription": "This is a short description. Maximum 250 words.",
+                "stageOfDevelopment": [{
+                    "name": "Development",
+                    "value": false,
+                    "substages": [{
+                        "name": "Pre-alpha",
+                        "value": false
+                    },
+                    {
+                        "name": "Alpha",
+                        "value": false
+                    }]
+                },
+                {
+                    "name": "Demonstrator",
+                    "value": false,
+                    "substages": [{
+                        "name": "Beta",
+                        "value": false
+                    },
+                    {
+                        "name": "Release Candidate",
+                        "value": false
+                    }]
+                },
+                {
+                    "name": "Productive",
+                    "value": true,
+                    "substages": [{
+                        "name": "Release",
+                        "value": true
+                    }]
+                }],
+                "version": "2.0",
+                "documentationUrl": "https://example.com",
+                "licenseUrl": "https://example.com",
+                "serviceUrl": "https://example.com"
+            }]
+        },
+        "organizationalInformation": {
+            "type": "object",
+            "default": {},
+            "title": "The organizationalInformation Schema",
+            "required": [
+                "servicePortfolio",
+                "includeInCatalog",
+                "providedThrough",
+                "funding"
+            ],
+            "properties": {
+                "servicePortfolio": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The servicePortfolio Schema",
+                    "examples": [
+                        "user-facing"
+                    ]
+                },
+                "includeInCatalog": {
+                    "type": "boolean",
+                    "default": false,
+                    "title": "The includeInCatalog Schema",
+                    "examples": [
+                        true
+                    ]
+                },
+                "providedThrough": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The providedThrough Schema",
+                    "items": {
+                        "type": "object",
+                        "title": "A Schema",
+                        "required": [
+                            "type",
+                            "percentage"
+                        ],
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "title": "The type Schema",
+                                "examples": [
+                                    "institutionalMission",
+                                    "projectFunding",
+                                    "others"
+                                ]
+                            },
+                            "percentage": {
+                                "type": "integer",
+                                "title": "The percentage Schema",
+                                "examples": [
+                                    100,
+                                    0
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "type": "institutionalMission",
+                            "percentage": 100
+                        },
+                        {
+                            "type": "projectFunding",
+                            "percentage": 0
+                        },
+                        {
+                            "type": "others",
+                            "percentage": 0
+                        }]
+                    },
+                    "examples": [
+                        [{
+                            "type": "institutionalMission",
+                            "percentage": 100
+                        },
+                        {
+                            "type": "projectFunding",
+                            "percentage": 0
+                        },
+                        {
+                            "type": "others",
+                            "percentage": 0
+                        }]
+                    ]
+                },
+                "funding": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The funding Schema",
+                    "examples": [
+                        "funding identifier"
+                    ]
+                }
+            },
+            "examples": [{
+                "servicePortfolio": "user-facing",
+                "includeInCatalog": true,
+                "providedThrough": [{
+                    "type": "institutionalMission",
+                    "percentage": 100
+                },
+                {
+                    "type": "projectFunding",
+                    "percentage": 0
+                },
+                {
+                    "type": "others",
+                    "percentage": 0
+                }],
+                "funding": "funding identifier"
+            }]
+        },
+        "support": {
+            "type": "object",
+            "default": {},
+            "title": "The support Schema",
+            "required": [
+                "contact",
+                "helpdeskContact",
+                "supportedUntil"
+            ],
+            "properties": {
+                "contact": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The contact Schema",
+                    "examples": [
+                        "demo@example.com"
+                    ]
+                },
+                "helpdeskContact": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The helpdeskContact Schema",
+                    "examples": [
+                        "demo@example.com"
+                    ]
+                },
+                "supportedUntil": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The supportedUntil Schema",
+                    "examples": [
+                        "1970-01-01"
+                    ]
+                }
+            },
+            "examples": [{
+                "contact": "demo@example.com",
+                "helpdeskContact": "demo@example.com",
+                "supportedUntil": "1970-01-01"
+            }]
+        },
+        "technicalInfrastructure": {
+            "type": "object",
+            "default": {},
+            "title": "The technicalInfrastructure Schema",
+            "required": [
+                "technicalBackbone",
+                "disasterAndRecoveryPlan",
+                "entranceControlTechnicalBackbone",
+                "stabilityOfOperation"
+            ],
+            "properties": {
+                "technicalBackbone": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The technicalBackbone Schema",
+                    "examples": [
+                        "Description of the technical backbone"
+                    ]
+                },
+                "disasterAndRecoveryPlan": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The disasterAndRecoveryPlan Schema",
+                    "examples": [
+                        "Description of the disaster and recovery plan"
+                    ]
+                },
+                "entranceControlTechnicalBackbone": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The entranceControlTechnicalBackbone Schema",
+                    "examples": [
+                        "Description of the entrance control for the technical backbone"
+                    ]
+                },
+                "stabilityOfOperation": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The stabilityOfOperation Schema",
+                    "examples": [
+                        "Description of the stability of operation"
+                    ]
+                }
+            },
+            "examples": [{
+                "technicalBackbone": "Description of the technical backbone",
+                "disasterAndRecoveryPlan": "Description of the disaster and recovery plan",
+                "entranceControlTechnicalBackbone": "Description of the entrance control for the technical backbone",
+                "stabilityOfOperation": "Description of the stability of operation"
+            }]
+        },
+        "documentation": {
+            "type": "object",
+            "default": {},
+            "title": "The documentation Schema",
+            "required": [
+                "guidanceAndWorkflowsOrTemplatesProvided",
+                "communicationStrategy",
+                "registeredAt",
+                "publishedInformation"
+            ],
+            "properties": {
+                "guidanceAndWorkflowsOrTemplatesProvided": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The guidanceAndWorkflowsOrTemplatesProvided Schema",
+                    "examples": [
+                        "Description of the guidance and workflow/templates provided"
+                    ]
+                },
+                "communicationStrategy": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The communicationStrategy Schema",
+                    "examples": [
+                        "Description of the communiction strategy"
+                    ]
+                },
+                "registeredAt": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The registeredAt Schema",
+                    "items": {
+                        "type": "object",
+                        "title": "A Schema",
+                        "required": [
+                            "name",
+                            "link",
+                            "value"
+                        ],
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "title": "The name Schema",
+                                "examples": [
+                                    "ELIXIR bio.tools",
+                                    "DFG RIsources",
+                                    "EOSC Marketplace",
+                                    "FAIRsharing",
+                                    "re3data",
+                                    "Others"
+                                ]
+                            },
+                            "link": {
+                                "type": "string",
+                                "title": "The link Schema",
+                                "examples": [
+                                    ""
+                                ]
+                            },
+                            "value": {
+                                "type": "boolean",
+                                "title": "The value Schema",
+                                "examples": [
+                                    true
+                                ]
+                            }
+                        },
+                        "examples": [{
+                            "name": "ELIXIR bio.tools",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "DFG RIsources",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "EOSC Marketplace",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "FAIRsharing",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "re3data",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "Others",
+                            "link": "",
+                            "value": true
+                        }]
+                    },
+                    "examples": [
+                        [{
+                            "name": "ELIXIR bio.tools",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "DFG RIsources",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "EOSC Marketplace",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "FAIRsharing",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "re3data",
+                            "link": "",
+                            "value": true
+                        },
+                        {
+                            "name": "Others",
+                            "link": "",
+                            "value": true
+                        }]
+                    ]
+                },
+                "publishedInformation": {
+                    "type": "array",
+                    "default": [],
+                    "title": "The publishedInformation Schema",
+                    "items": {
+                        "type": "string",
+                        "default": "",
+                        "title": "A Schema",
+                        "examples": [
+                            "10.5281/zenodo.8327366"
+                        ]
+                    },
+                    "examples": [
+                        [
+                            "10.5281/zenodo.8327366"]
+                    ]
+                }
+            },
+            "examples": [{
+                "guidanceAndWorkflowsOrTemplatesProvided": "Description of the guidance and workflow/templates provided",
+                "communicationStrategy": "Description of the communiction strategy",
+                "registeredAt": [{
+                    "name": "ELIXIR bio.tools",
+                    "link": "",
+                    "value": true
+                },
+                {
+                    "name": "DFG RIsources",
+                    "link": "",
+                    "value": true
+                },
+                {
+                    "name": "EOSC Marketplace",
+                    "link": "",
+                    "value": true
+                },
+                {
+                    "name": "FAIRsharing",
+                    "link": "",
+                    "value": true
+                },
+                {
+                    "name": "re3data",
+                    "link": "",
+                    "value": true
+                },
+                {
+                    "name": "Others",
+                    "link": "",
+                    "value": true
+                }],
+                "publishedInformation": [
+                    "10.5281/zenodo.8327366"
+                ]
+            }]
+        },
+        "reporting": {
+            "type": "object",
+            "default": {},
+            "title": "The reporting Schema",
+            "required": [
+                "serviceCategory",
+                "selfEvaluation",
+                "kpiMonitoring",
+                "reportCardUrl"
+            ],
+            "properties": {
+                "serviceCategory": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The serviceCategory Schema",
+                    "examples": [
+                        "Database"
+                    ]
+                },
+                "selfEvaluation": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The selfEvaluation Schema",
+                    "examples": [
+                        "Description of the self evaluation"
+                    ]
+                },
+                "kpiMonitoring": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The kpiMonitoring Schema",
+                    "examples": [
+                        "Description of the KPI monitoring"
+                    ]
+                },
+                "reportCardUrl": {
+                    "type": "string",
+                    "default": "",
+                    "title": "The reportCardUrl Schema",
+                    "examples": [
+                        "https://example.com"
+                    ]
+                }
+            },
+            "examples": [{
+                "serviceCategory": "Database",
+                "selfEvaluation": "Description of the self evaluation",
+                "kpiMonitoring": "Description of the KPI monitoring",
+                "reportCardUrl": "https://example.com"
+            }]
+        }
+    },
+    "examples": [{
+        "serviceName": "Example Service",
+        "contentResponsible": "demo@example.com",
+        "detailedDescription": "This is a detailed description. Lorem ipsum...",
+        "generalInformation": {
+            "serviceProvider": "The Organization",
+            "areaOfApplication": [{
+                "name": "Planning",
+                "value": false
+            },
+            {
+                "name": "Harmonization (e.g. Curation, Terminology)",
+                "value": false
+            },
+            {
+                "name": "Access/Archival",
+                "value": false
+            },
+            {
+                "name": "Discover/Exploration",
+                "value": false
+            },
+            {
+                "name": "Processing/Visualization",
+                "value": false
+            },
+            {
+                "name": "Support/Training",
+                "value": true
+            },
+            {
+                "name": "Other",
+                "description": "please specify",
+                "value": false
+            }],
+            "shortDescription": "This is a short description. Maximum 250 words.",
+            "stageOfDevelopment": [{
+                "name": "Development",
+                "value": false,
+                "substages": [{
+                    "name": "Pre-alpha",
+                    "value": false
+                },
+                {
+                    "name": "Alpha",
+                    "value": false
+                }]
+            },
+            {
+                "name": "Demonstrator",
+                "value": false,
+                "substages": [{
+                    "name": "Beta",
+                    "value": false
+                },
+                {
+                    "name": "Release Candidate",
+                    "value": false
+                }]
+            },
+            {
+                "name": "Productive",
+                "value": true,
+                "substages": [{
+                    "name": "Release",
+                    "value": true
+                }]
+            }],
+            "version": "2.0",
+            "documentationUrl": "https://example.com",
+            "licenseUrl": "https://example.com",
+            "serviceUrl": "https://example.com"
+        },
+        "organizationalInformation": {
+            "servicePortfolio": "user-facing",
+            "includeInCatalog": true,
+            "providedThrough": [{
+                "type": "institutionalMission",
+                "percentage": 100
+            },
+            {
+                "type": "projectFunding",
+                "percentage": 0
+            },
+            {
+                "type": "others",
+                "percentage": 0
+            }],
+            "funding": "funding identifier"
+        },
+        "support": {
+            "contact": "demo@example.com",
+            "helpdeskContact": "demo@example.com",
+            "supportedUntil": "1970-01-01"
+        },
+        "technicalInfrastructure": {
+            "technicalBackbone": "Description of the technical backbone",
+            "disasterAndRecoveryPlan": "Description of the disaster and recovery plan",
+            "entranceControlTechnicalBackbone": "Description of the entrance control for the technical backbone",
+            "stabilityOfOperation": "Description of the stability of operation"
+        },
+        "documentation": {
+            "guidanceAndWorkflowsOrTemplatesProvided": "Description of the guidance and workflow/templates provided",
+            "communicationStrategy": "Description of the communiction strategy",
+            "registeredAt": [{
+                "name": "ELIXIR bio.tools",
+                "link": "",
+                "value": true
+            },
+            {
+                "name": "DFG RIsources",
+                "link": "",
+                "value": true
+            },
+            {
+                "name": "EOSC Marketplace",
+                "link": "",
+                "value": true
+            },
+            {
+                "name": "FAIRsharing",
+                "link": "",
+                "value": true
+            },
+            {
+                "name": "re3data",
+                "link": "",
+                "value": true
+            },
+            {
+                "name": "Others",
+                "link": "",
+                "value": true
+            }],
+            "publishedInformation": [
+                "10.5281/zenodo.8327366"
+            ]
+        },
+        "reporting": {
+            "serviceCategory": "Database",
+            "selfEvaluation": "Description of the self evaluation",
+            "kpiMonitoring": "Description of the KPI monitoring",
+            "reportCardUrl": "https://example.com"
+        }
+    }]
+}
